@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101412"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="LIMIT BREAK">
+  <meta name="description" content="Tu entrenamiento y nutrición flexible, en privado.">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-192.png"><link rel="icon" href="icons/icon-192.png"><link rel="stylesheet" href="styles.css">
+  <title>LIMIT BREAK · Train · Fuel · Evolve</title>
+</head>
+<body>
+<div id="app">
+  <header class="topbar"><div class="brand"><span class="brandmark">LB<span class="dot">.</span></span><span>LIMIT BREAK <small>TRAIN · FUEL · EVOLVE</small></span></div><button id="headerDate" class="date-chip" aria-label="Fecha actual"></button></header>
+  <main id="view" aria-live="polite"></main>
+  <nav class="tabbar" aria-label="Navegación principal">
+    <button data-tab="home" class="tab active"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3zM9 20v-7h6v7"/></svg><span>Hoy</span></button>
+    <button data-tab="workouts" class="tab"><svg viewBox="0 0 24 24"><path d="M3 9v6m3-9v12m3-7h6m0-5v12m3-9v6M1 9h4m14 0h4M1 15h4m14 0h4"/></svg><span>Entrenos</span></button>
+    <button data-tab="nutrition" class="tab"><svg viewBox="0 0 24 24"><path d="M4 3v8a3 3 0 0 0 6 0V3M7 3v17M18 3c-3 2-4 6-4 10h4v7"/></svg><span>Comidas</span></button>
+    <button data-tab="progress" class="tab"><svg viewBox="0 0 24 24"><path d="M3 19h18M5 15l5-5 4 3 5-8"/></svg><span>Progreso</span></button>
+    <button data-tab="coach" class="tab"><svg viewBox="0 0 24 24"><path d="M12 3 9 9l-6 3 6 3 3 6 3-6 6-3-6-3z"/></svg><span>Plan</span></button>
+  </nav>
+</div>
+<dialog id="modal"><div class="modal-top"><h2 id="modalTitle">Añadir</h2><button id="modalClose" aria-label="Cerrar" class="icon-btn">✕</button></div><div id="modalBody"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js" defer></script>
+<script src="engine.js" defer></script>
+</body>
+</html>
