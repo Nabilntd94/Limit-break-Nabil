@@ -47,11 +47,11 @@ function lbwCard(){const p=lbwGetPlan(),saved=p.days.filter(x=>lbwSessionStatus(
     if(session){const st=lbwSessionStatus(session);rows.push(`<div class="lbw-row ${lb3.selectedWeekSession===session.id?'lbw-selected':''}"><div class="lbw-date"><b>${LBW_DAY[wd]}</b><small>${daydate.slice(8)}</small></div><div class="lbw-main"><strong>${esc(session.title)}</strong><small>${esc(session.groups.join(' · '))} · ${session.exercises.length} ejercicios${st?' · '+st.title:''}</small></div><button class="btn ghost small" onclick="lbwOpenSession('${session.id}')">${st?'Ver / repetir':'Ver rutina'}</button></div>`)}
     else rows.push(`<div class="lbw-row"><div class="lbw-date"><b>${LBW_DAY[wd]}</b><small>${daydate.slice(8)}</small></div><div class="lbw-main"><strong>${sport?'⚽ Fútbol':'Descanso / recuperación'}</strong><small>${sport?'Sábado fijo: regístralo si juegas, sin calorías descontadas automáticamente':'Movilidad opcional; recupera antes de la siguiente sesión'}</small></div></div>`);
   }
-  return `<section class="lb3-card" id="lbwCalendar"><div class="section-head"><div><p class="eyebrow">PLAN AUTOMÁTICO · ESTA SEMANA</p><h2>Tu semana de entrenamiento</h2></div><span class="lb3-tag">${saved}/${p.days.length} registradas</span></div><p class="lb3-muted">Generado con tus días de gimnasio, modalidad, nivel, objetivo y equipo. El sábado es fútbol; pulsa cualquier sesión para cargar todos sus ejercicios editables.</p><div class="lb3-actions"><button class="btn" onclick="lbwUpdatePlan()">✦ Generar mi semana según preferencias</button><button class="btn ghost" onclick="lbwRegenerate()">↻ Otra semana de ejercicios</button></div><div class="lbw-days">${rows.join('')}</div><p class="lb3-mini">Plan orientativo; descansa o cambia un ejercicio si hay fatiga o molestias. El fútbol puede alterar la recuperación y no determina por sí solo cuántos kg perderás.</p></section>`
+  return `<section class="lb3-card" id="lbwCalendar"><div class="section-head"><div><p class="eyebrow">TU PLAN AUTOMÁTICO · GENERADO Y GUARDADO</p><h2>Tu rutina semanal ya está preparada</h2></div><span class="lb3-tag">${saved}/${p.days.length} registradas</span></div><p class="lb3-muted">Se genera automáticamente al abrir Entrenos por primera vez. Puedes editar las preferencias debajo y pulsar Generar mi semana según preferencias. Pulsa «Ver rutina» en cualquier día para consultar y editar ejercicios, series y pesos. Fútbol los sábados.</p><div class="lb3-actions"><button class="btn" onclick="lbwUpdatePlan()">✦ GENERAR SEMANA CON MIS PREFERENCIAS</button><button class="btn ghost" onclick="lbwRegenerate()">↻ Otra semana de ejercicios</button></div><div class="lbw-days">${rows.join('')}</div><p class="lb3-mini">Plan orientativo; descansa o cambia un ejercicio si hay fatiga o molestias. El fútbol puede alterar la recuperación y no determina por sí solo cuántos kg perderás.</p></section>`
 }
 // Place weekly planning after preference fields, before the editable single-session panel.
 const lbwOriginalWorkoutForm=lb3WorkoutForm;
-lb3WorkoutForm=function(){const original=lbwOriginalWorkoutForm();const at=original.indexOf('<section class="lb3-card"><div class="section-head"><h2>Propuesta editable del día');return at>=0?original.slice(0,at)+lbwCard()+original.slice(at):lbwCard()+original};
+lb3WorkoutForm=function(){const original=lbwOriginalWorkoutForm();const at=original.indexOf('<section class="lb3-card"><h2>Mi entrenamiento');return at>=0?original.slice(0,at)+lbwCard()+original.slice(at):lbwCard()+original};
 const lbwOriginalSetTraining=lb3SetTraining;
 lb3SetTraining=function(){lbwSyncPrefs();lbwGenerate();lbwOpenFirst();toast('Rutina semanal generada y guardada')};
 window.lb3SetTraining=lb3SetTraining;
@@ -61,3 +61,14 @@ window.lb3SaveWorkout=lb3SaveWorkout;
 // Start with the first scheduled session, while preserving any selection from the current week.
 if(!lb3.selectedWeekSession){const p=lbwGetPlan(),s=p.days.find(x=>x.date>=today()&&!lbwSessionStatus(x))||p.days[0];if(s){lb3.selectedWeekSession=s.id;lb3.workout={title:s.title,groups:s.groups,exercises:s.exercises};lb3.editing=s.exercises.map(e=>({...e}));lb3Save()}}
 window.lbwGenerate=lbwGenerate;window.lbwUpdatePlan=lbwUpdatePlan;window.lbwOpenSession=lbwOpenSession;window.lbwRegenerate=lbwRegenerate;
+
+// LIMIT BREAK 3.3: quick access to the generated week from the dashboard.
+const lbwPreviousHome = homeView;
+homeView = function(){
+  const p=lbwGetPlan();
+  const items=p.days.slice(0,4).map(s=>`<div class="lbw-mini-row"><b>${LBW_DAY[s.day]}</b><span>${esc(s.title)} · ${s.exercises.length} ejercicios</span></div>`).join('');
+  return `<section class="lb33-start"><div><p class="eyebrow">LIMIT BREAK 3.3 · PLAN SEMANAL</p><h2>Tu semana ya está generada</h2><p>Rutinas completas según días, modalidad, objetivo y material. Abre Entrenos para ver o cambiar cualquier sesión.</p></div><button class="btn" onclick="nav('workouts')">VER MI SEMANA Y RUTINAS →</button>${items}<p class="lb3-mini">Sábado: fútbol · sin carga de gimnasio planificada</p></section>`+lbwPreviousHome();
+};
+const lbwPreviousProgress = progressView;
+progressView = function(){return `<section class="lb33-progress"><p class="eyebrow">TRANSFORMATION ARC</p><h2>Tu evolución, una sesión cada vez</h2></section>`+lbwPreviousProgress()};
+render();

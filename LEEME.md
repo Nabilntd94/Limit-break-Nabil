@@ -1,55 +1,25 @@
-# LIMIT BREAK 3.0 · actualización sin borrar GitHub
+# LIMIT BREAK 3.3 — Rutinas automáticas visibles
 
-Aplicación web instalable para iPhone. Basada en la versión 2.0; conserva las claves de datos locales anteriores (`forma_personal_v1`, `limitbreak_engine_v2` y `forma_photos_v1`). La actualización del código normalmente no elimina esos datos, pero exporta una copia si ya los has utilizado. Los datos no se sincronizan entre Safari del Mac y el iPhone.
+## Qué se corrigió
 
-## Cambios v3
+- En **Hoy** aparece una tarjeta «Tu semana ya está generada», con un botón **VER MI SEMANA Y RUTINAS**.
+- En **Entrenos**, la planificación semanal aparece **antes** de los ajustes; el plan inicial se genera automáticamente.
+- Para personalizar: elige modalidad, músculos/día, número de días, objetivo, experiencia y equipamiento en «Mi entrenamiento». Pulsa **GENERAR SEMANA CON MIS PREFERENCIAS** en la tarjeta de arriba. Si necesitas una variante, pulsa «Otra semana de ejercicios».
+- Pulsa **Ver rutina** en cualquier día para cargar ejercicios, y luego modifica máquinas, kg, repeticiones o series y registra la sesión.
+- Las ilustraciones tienen lugares distintos: Hoy (anime-training.webp), Entrenos (dragon-hero.webp), Progreso (saiyan-hero.png). Los iconos son iconos de la app, no banners.
+- Los registros siguen guardándose **localmente**; mantén copias de seguridad de tus datos.
 
-- Entrenos: elección de Full Body, PPL, Upper/Lower, Weider, fuerza, funcional, híbrida o recomendación. Objetivo y días de gimnasio; músculos por sesión especialmente en recomendación y Weider.
-- Propuesta editable: añadir, cambiar o quitar máquinas; modificar series, repeticiones y pesos; la opción «Otra propuesta» cambia el ejercicio de referencia de forma determinista.
-- Al registrar: cumplimiento completo/parcial/adaptado, duración, cardio adicional, historial y estimación de gasto mediante MET. El cálculo es muy aproximado y no ajusta automáticamente las calorías objetivo.
-- Fútbol y otras actividades: registro independiente, con el sábado como preferencia informativa.
-- Comidas: biblioteca local de más de 50 alimentos con macros orientativos por 100g; crear platos por ingredientes y gramos; editar el plato y recalcular macros; editar manualmente registros anteriores; seguimiento flexible del menú.
-- Fitness Park: campo para indicar centro y máquinas, biblioteca de ejercicios propia y enlace a la aplicación oficial; NO incluye sincronización, QR, programas exclusivos ni imágenes propietarias de Fitness Park.
-- Imagen anime deportiva original, no personajes ni imágenes oficiales de Dragon Ball. Modo oscuro y los seis colores anteriores.
+## Cómo actualizar en GitHub
 
-## Cómo actualizar tu repositorio actual
+No borres el repositorio ni `.github/workflows/static.yml`.
 
-**NO borres el repositorio.** URL del repositorio: `https://github.com/Nabilntd94/Limit-break-Nabil`.
+1. Descarga y descomprime el ZIP.
+2. En tu repositorio, selecciona `Add file → Upload files`.
+3. Selecciona **el contenido dentro** de `limit-break-v3.3`, no la carpeta.
+4. Arrastra los archivos, acepta sobrescribir y pulsa `Commit directly to main`. Si GitHub bloquea reemplazos de archivos existentes, pide ayuda antes de renombrarlos.
+5. En `Actions`, confirma despliegue verde. Abre el sitio y busca **LIMIT BREAK 3.3 · PLAN SEMANAL** arriba de Inicio.
+6. Si sigue mostrando versión antigua, cierra la pestaña y vuelve a abrirla; si persiste, revisa el service worker y la caché del sitio, sin borrar datos personales.
 
-1. Descomprime `LIMIT_BREAK_v3.zip` en tu Mac.
-2. Entra dentro de `limit-break-v3` (no subas la carpeta completa).
-3. GitHub -> repositorio `Limit-break-Nabil` -> Code -> Add file -> Upload files.
-4. Arrastra **todos los archivos y carpetas contenidos** dentro de `limit-break-v3` a la zona de subida. Los nombres existentes se reemplazarán, y los nuevos (`upgrade.js`, `upgrade.css`, `anime-training.webp`) se añadirán.
-5. Comprueba que `index.html`, `app.js`, `engine.js`, `upgrade.js`, `upgrade.css` y `anime-training.webp` queden en la raíz, y `icons/` dentro de la raíz.
-6. Pulsa `Commit changes` y selecciona `Commit directly to the main branch`.
-7. En Actions, comprueba que el workflow `Deploy static content to Pages` termina en verde. No modifiques ni borres `.github/workflows/static.yml`.
-8. Visita `https://nabilntd94.github.io/Limit-break-Nabil/` y recarga. Si una versión anterior sigue apareciendo, cierra/reabre y en Safari borra solo la caché del sitio si ya has exportado los datos; mejor evitar borrar almacenamiento personal.
+## Limitaciones
 
-## Avisos
-
-Los macros y las estimaciones de calorías de las actividades son orientativos y dependen de la preparación, marcas y esfuerzo. No son prescripciones ni mediciones clínicas. Para alergias, comprueba ingredientes y etiquetas reales. La app no deduce el gasto deportivo de tus objetivos de comida y no debe utilizar estimaciones aisladas para fijar pérdidas semanales de peso. Copias de seguridad y fotos permanecen locales. La aplicación está pensada para adultos.
-
-## Verificación
-
-Revisa en Safari del Mac y iPhone: cambiar tipo de rutina, guardar y generar, «Otra propuesta», sustituir ejercicio, añadir cardio y guardar sesión; crear comida por ingredientes, modificar gramos, guardar, volver a editar y confirmar que el total cambia; registrar fútbol; exportar copia JSON. El código ha superado comprobación sintáctica pero necesita prueba manual en Safari de iOS.
-
-
-## LIMIT BREAK 3.1 · Power-Up Mode
-- estética anime gym original
-- Entrenos editables con tipo de rutina, músculos por día, objetivo y cardio
-- `Otra propuesta` reforzada para que cambie de verdad cuando haya variantes
-- Comidas editables por ingredientes con recálculo automático de macros
-- seguimiento de cumplimiento de entrenamiento y comida
-- bloque `Modo Fitness Park` para anotar club y máquinas disponibles
-
-## Dragon Power-Up visual (3.1.1)
-- Cabecera ilustrada con Goku, Vegeta, Vegito y Gogeta, a petición del usuario, para uso personal. La ilustración no es oficial ni está afiliada a Dragon Ball ni a sus titulares de derechos. Si distribuyes públicamente la app, revisa los permisos de propiedad intelectual.
-- Se utiliza `dragon-hero.webp` en la cabecera del entrenamiento. No cambian los registros, macros ni la lógica de rutinas.
-- Para actualizar: desde el repositorio actual, **Add file → Upload files**, y subir el contenido de esta carpeta a la raíz. No borrar `.github/workflows/static.yml`. Confirmar en Actions el despliegue verde. Si el navegador sigue mostrando la versión anterior, recargar la página.
-
-
-## LIMIT BREAK 3.2 — planificación semanal personalizada
-En Entrenos, selecciona modalidad, días, grupos musculares, objetivo y material. Pulsa **Generar mi semana según preferencias**. Verás gimnasio, descanso y fútbol del sábado. Puedes abrir cada día con **Ver rutina**, cambiar ejercicios y pesos y registrar lo hecho; el historial ayuda a recuperar cargas previas. **Otra semana de ejercicios** crea variantes sin borrar el historial registrado. No es un plan clínico y las máquinas concretas deben confirmarse en el club.
-
-### Actualizar GitHub
-No borres `.github/workflows/static.yml`. En tu repositorio público, Add file > Upload files y arrastra todos los archivos que están dentro del directorio de esta versión (no la carpeta contenedora). Confirma directamente en main. Comprueba el despliegue verde en Actions y vuelve a cargar la app en Safari. Si hay una versión cacheada, cierra la PWA y vuelve a abrirla, o recarga Safari. Exporta antes una copia JSON si hay registros.
+Los ejercicios y los días propuestos se basan en reglas generales; no sustituyen a un entrenador que evalúe técnica, fatiga o lesiones. Fútbol sábado informativo. No existen sincronización entre Mac/iPhone ni estimación fiable del porcentaje de grasa corporal mediante fotos.
