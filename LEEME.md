@@ -1,40 +1,48 @@
-# LIMIT BREAK v2 · instalación y uso
+# LIMIT BREAK 3.0 · actualización sin borrar GitHub
 
-## Qué incorpora
+Aplicación web instalable para iPhone. Basada en la versión 2.0; conserva las claves de datos locales anteriores (`forma_personal_v1`, `limitbreak_engine_v2` y `forma_photos_v1`). La actualización del código normalmente no elimina esos datos, pero exporta una copia si ya los has utilizado. Los datos no se sincronizan entre Safari del Mac y el iPhone.
 
-- Nombre e iconos LIMIT BREAK (LB), estilo oscuro y 6 colores de acento.
-- Generador local de sesiones Full Body, Upper/Lower, PPL, Weider, Fuerza, Funcional e Híbrida. Biblioteca de 60+ ejercicios con filtros, equipamiento, indicaciones y alternativas. Ajusta el índice de sesión usando entrenamientos que se registran esa semana. El fútbol se considera actividad habitual el sábado.
-- Generador local de menús con 38 platos de ejemplo, 4 comidas al día, estimaciones de macros y lista de compra; preferencias vegetariana, vegana, pescetariana u omnívora. Modifica las proporciones para acercarse al objetivo energético; **las cifras son orientativas, no una base certificada**.
-- Conserva los registros de la v1 porque mantiene expresamente su clave de almacenamiento original `forma_personal_v1`; preferencias de la v2 guardadas en `limitbreak_engine_v2`. Foto y medidas siguen guardándose localmente.
-- Sin servicios IA de pago. Sin servidor que reciba fotos ni datos personales.
+## Cambios v3
 
-## Cómo actualizar tu repositorio de GitHub sin borrarlo
+- Entrenos: elección de Full Body, PPL, Upper/Lower, Weider, fuerza, funcional, híbrida o recomendación. Objetivo y días de gimnasio; músculos por sesión especialmente en recomendación y Weider.
+- Propuesta editable: añadir, cambiar o quitar máquinas; modificar series, repeticiones y pesos; la opción «Otra propuesta» cambia el ejercicio de referencia de forma determinista.
+- Al registrar: cumplimiento completo/parcial/adaptado, duración, cardio adicional, historial y estimación de gasto mediante MET. El cálculo es muy aproximado y no ajusta automáticamente las calorías objetivo.
+- Fútbol y otras actividades: registro independiente, con el sábado como preferencia informativa.
+- Comidas: biblioteca local de más de 50 alimentos con macros orientativos por 100g; crear platos por ingredientes y gramos; editar el plato y recalcular macros; editar manualmente registros anteriores; seguimiento flexible del menú.
+- Fitness Park: campo para indicar centro y máquinas, biblioteca de ejercicios propia y enlace a la aplicación oficial; NO incluye sincronización, QR, programas exclusivos ni imágenes propietarias de Fitness Park.
+- Imagen anime deportiva original, no personajes ni imágenes oficiales de Dragon Ball. Modo oscuro y los seis colores anteriores.
 
-**Antes de empezar:** si has apuntado algo en tu app v1, entra en Mi perfil > Exportar copia completa (JSON) y guárdala. Aunque se conserve el almacenamiento del navegador, es mejor tener una copia.
+## Cómo actualizar tu repositorio actual
 
-1. Descarga y descomprime `LIMIT_BREAK_v2.zip` en tu Mac.
-2. Abre GitHub > tu repositorio `Limit-Brake` > pestaña Code.
-3. Haz clic en `Add file` > `Upload files`.
-4. En Finder, entra DENTRO de `limit-break-v2`; selecciona TODO SU CONTENIDO (archivos `index.html`, `app.js`, `engine.js`, `styles.css`, `sw.js`, `manifest.webmanifest`, `LEEME.md` y carpeta `icons`), no la carpeta contenedora.
-5. Arrástralos al cuadro de subida. GitHub reconocerá archivos existentes y los reemplazará en el commit; también añadirá `engine.js`.
-6. Abajo, pulsa `Commit changes` (a rama `main`). **No hace falta borrar el repositorio ni la configuración de Pages**.
-7. En Settings > Pages, verifica `Deploy from a branch` / `main` / `/(root)`; no pongas nada en Custom domain.
-8. Abre `https://nabilntd94.github.io/Limit-Brake/` en Safari; actualiza la página si sigue mostrando FORMA. Con la app ya instalada, cierra y vuelve a abrir para que el service worker reciba la versión nueva. Si persiste una versión anterior, intenta una recarga en Safari y revisa que el despliegue de GitHub Pages haya concluido.
+**NO borres el repositorio.** URL del repositorio: `https://github.com/Nabilntd94/Limit-break-Nabil`.
 
-**IMPORTANTE:** si el repositorio actual usa como nombre `limit-break` en lugar de `Limit-Brake`, la dirección respetará ese nombre; copia siempre la dirección mostrada por GitHub Pages.
+1. Descomprime `LIMIT_BREAK_v3.zip` en tu Mac.
+2. Entra dentro de `limit-break-v3` (no subas la carpeta completa).
+3. GitHub -> repositorio `Limit-break-Nabil` -> Code -> Add file -> Upload files.
+4. Arrastra **todos los archivos y carpetas contenidos** dentro de `limit-break-v3` a la zona de subida. Los nombres existentes se reemplazarán, y los nuevos (`upgrade.js`, `upgrade.css`, `anime-training.webp`) se añadirán.
+5. Comprueba que `index.html`, `app.js`, `engine.js`, `upgrade.js`, `upgrade.css` y `anime-training.webp` queden en la raíz, y `icons/` dentro de la raíz.
+6. Pulsa `Commit changes` y selecciona `Commit directly to the main branch`.
+7. En Actions, comprueba que el workflow `Deploy static content to Pages` termina en verde. No modifiques ni borres `.github/workflows/static.yml`.
+8. Visita `https://nabilntd94.github.io/Limit-break-Nabil/` y recarga. Si una versión anterior sigue apareciendo, cierra/reabre y en Safari borra solo la caché del sitio si ya has exportado los datos; mejor evitar borrar almacenamiento personal.
 
-## Por qué no hay una IA real
+## Avisos
 
-Las propuestas vienen de una biblioteca y de reglas locales y reproducibles. No se emplea modelo de lenguaje ni se interpretan fotos. Las fotos sirven para tu comparación visual privada, no para diagnóstico o estimación exacta de grasa corporal.
+Los macros y las estimaciones de calorías de las actividades son orientativos y dependen de la preparación, marcas y esfuerzo. No son prescripciones ni mediciones clínicas. Para alergias, comprueba ingredientes y etiquetas reales. La app no deduce el gasto deportivo de tus objetivos de comida y no debe utilizar estimaciones aisladas para fijar pérdidas semanales de peso. Copias de seguridad y fotos permanecen locales. La aplicación está pensada para adultos.
 
-## Datos y seguridad
+## Verificación
 
-Los datos dependen del navegador/origen web y del almacenamiento local de cada dispositivo. No se sincronizan del Mac al iPhone automáticamente. No borres la app ni sus datos antes de guardar una copia JSON y comprobar la restauración. Las fotos se guardan en IndexedDB.
+Revisa en Safari del Mac y iPhone: cambiar tipo de rutina, guardar y generar, «Otra propuesta», sustituir ejercicio, añadir cardio y guardar sesión; crear comida por ingredientes, modificar gramos, guardar, volver a editar y confirmar que el total cambia; registrar fútbol; exportar copia JSON. El código ha superado comprobación sintáctica pero necesita prueba manual en Safari de iOS.
 
-En el repositorio de GitHub sube solo código y recursos. Nunca subas tus fotos, registros o exportaciones JSON.
 
-La base de alimentos contiene platos con estimaciones indicativas, que debes revisar según cantidades y marcas. No garantiza evitación de alérgenos o trazas. Las recomendaciones físicas y energéticas requieren adaptar dificultad, técnica y recuperación a tu situación.
+## LIMIT BREAK 3.1 · Power-Up Mode
+- estética anime gym original
+- Entrenos editables con tipo de rutina, músculos por día, objetivo y cardio
+- `Otra propuesta` reforzada para que cambie de verdad cuando haya variantes
+- Comidas editables por ingredientes con recálculo automático de macros
+- seguimiento de cumplimiento de entrenamiento y comida
+- bloque `Modo Fitness Park` para anotar club y máquinas disponibles
 
-## Próximos pasos posibles
-
-Ampliar inventario de máquinas verificadas del Fitness Park concreto, mejorar reglas de planificación según descanso percibido y acumular una base nutricional más completa con datos abiertos de origen documentado y licencias compatibles.
+## Dragon Power-Up visual (3.1.1)
+- Cabecera ilustrada con Goku, Vegeta, Vegito y Gogeta, a petición del usuario, para uso personal. La ilustración no es oficial ni está afiliada a Dragon Ball ni a sus titulares de derechos. Si distribuyes públicamente la app, revisa los permisos de propiedad intelectual.
+- Se utiliza `dragon-hero.webp` en la cabecera del entrenamiento. No cambian los registros, macros ni la lógica de rutinas.
+- Para actualizar: desde el repositorio actual, **Add file → Upload files**, y subir el contenido de esta carpeta a la raíz. No borrar `.github/workflows/static.yml`. Confirmar en Actions el despliegue verde. Si el navegador sigue mostrando la versión anterior, recargar la página.
