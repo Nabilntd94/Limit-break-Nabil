@@ -46,3 +46,10 @@ Revisa en Safari del Mac y iPhone: cambiar tipo de rutina, guardar y generar, «
 - Cabecera ilustrada con Goku, Vegeta, Vegito y Gogeta, a petición del usuario, para uso personal. La ilustración no es oficial ni está afiliada a Dragon Ball ni a sus titulares de derechos. Si distribuyes públicamente la app, revisa los permisos de propiedad intelectual.
 - Se utiliza `dragon-hero.webp` en la cabecera del entrenamiento. No cambian los registros, macros ni la lógica de rutinas.
 - Para actualizar: desde el repositorio actual, **Add file → Upload files**, y subir el contenido de esta carpeta a la raíz. No borrar `.github/workflows/static.yml`. Confirmar en Actions el despliegue verde. Si el navegador sigue mostrando la versión anterior, recargar la página.
+
+
+## LIMIT BREAK 3.2 — planificación semanal personalizada
+En Entrenos, selecciona modalidad, días, grupos musculares, objetivo y material. Pulsa **Generar mi semana según preferencias**. Verás gimnasio, descanso y fútbol del sábado. Puedes abrir cada día con **Ver rutina**, cambiar ejercicios y pesos y registrar lo hecho; el historial ayuda a recuperar cargas previas. **Otra semana de ejercicios** crea variantes sin borrar el historial registrado. No es un plan clínico y las máquinas concretas deben confirmarse en el club.
+
+### Actualizar GitHub
+No borres `.github/workflows/static.yml`. En tu repositorio público, Add file > Upload files y arrastra todos los archivos que están dentro del directorio de esta versión (no la carpeta contenedora). Confirma directamente en main. Comprueba el despliegue verde en Actions y vuelve a cargar la app en Safari. Si hay una versión cacheada, cierra la PWA y vuelve a abrirla, o recarga Safari. Exporta antes una copia JSON si hay registros.
