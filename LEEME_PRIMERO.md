@@ -1,9 +1,12 @@
-# LIMIT BREAK 4.4 — Primera posición del ejercicio corregida
+# LIMIT BREAK 4.5 · Fitness Park La Maquinista Edition
 
-Esta versión corrige el fallo por el que el primer ejercicio de cada grupo muscular quedaba fijado tras pulsar «Otra propuesta de ejercicios». Ahora se rotan todas las posiciones cuando hay alternativas en la biblioteca.
+Aplicación completa para GitHub Pages. Sube **el contenido de esta carpeta** a la raíz del repositorio, no la carpeta contenedora. Conserva `.github/workflows/static.yml` existente.
 
-**Conserva `.github/workflows/static.yml` en GitHub.** No borres tus datos de Safari o de la app instalada. Sube los archivos del ZIP a la raíz del repositorio, sustituyendo los que tengan el mismo nombre y ubicación. Si GitHub impide sobrescribir por Upload files, utiliza el editor del archivo o una herramienta de sincronización; no dupliques nombres.
+## Novedades
+- Entrenos > Mi Fitness Park: activar únicamente modalidades de equipamiento realmente disponibles en La Maquinista. No se presupone un inventario oficial. Burning Park y Cycle Park no se ofrecen.
+- Entrenos > Ejercicios: favoritos, excluir ejercicios, cambiar su foto subiendo una imagen propia, añadir nuevos ejercicios.
+- Entrenos > Mi semana > Ver rutina > Entrenar en directo: registrar kilos y repeticiones por serie, marcar cada serie, descanso de 90 segundos, energía y notas.
+- Se conservan las ilustraciones anime y las fotos de referencia de versiones previas.
+- Mis datos y ajustes siguen siendo LOCALES en cada navegador. Exportar copia en Perfil antes de actualizar es recomendable. Los archivos de fotos personales y el inventario personalizado no se sincronizan entre dispositivos.
 
-El plan sigue respetando días, modalidades y objetivos. Si un músculo solo tiene un ejercicio elegible, no puede inventarse una alternativa. Cambiar la semana sustituye la propuesta no registrada: exporta antes tus datos si necesitas copia.
-
-Se mantienen intactas las tres imágenes de `assets/` y las fotografías de `exercises/`.
+**Aviso:** las fotos de ejercicio son orientativas, no guías técnicas verificadas. Las máquinas varían entre clubes. No uses el repositorio público para guardar tus fotos o copias JSON privadas.
