@@ -1,22 +1,12 @@
-# LIMIT BREAK 4.2 — ZIP COMPLETO
+# LIMIT BREAK 4.3 — Generador de alternativas
 
-Esta versión contiene todos los archivos de LIMIT BREAK 4.2 para GitHub Pages, **excepto** la configuración de publicación `.github/workflows/static.yml`, que debes conservar si ya existe.
+Versión completa. Se puede subir todo el contenido de esta carpeta a la raíz del repositorio, sin borrar `.github/workflows/static.yml`.
 
-## Mejoras respecto a 4.1
-- 32 fotografías de referencia generadas para el proyecto, sin utilizar imágenes oficiales de Fitness Park.
-- 34 de los 63 ejercicios tienen una referencia de su movimiento asignada; los restantes muestran claramente «Imagen específica pendiente» sin mostrar fotografías de otros ejercicios.
-- Se conservan las tres ilustraciones anime existentes en Hoy, Entrenos y Progreso (`assets/home.webp`, `assets/training.webp`, `assets/progress.webp`).
-- Etiqueta de versión 4.2 y caché offline actualizada.
-- Mantiene el generador, la edición, nutrición y progreso de 4.1.
+## Corrección
+- El botón **Otra propuesta de ejercicios** rota las alternativas de cada grupo muscular y muestra cuántas posiciones han cambiado.
+- Conserva los días exactos, el tipo de rutina, el equipamiento y el fútbol del sábado.
+- La vista de sesión permanece abierta al regenerar.
+- Las propuestas se guardan en el almacenamiento local usando la misma clave que en LIMIT BREAK 4.2, para mantener tus registros.
+- Se conservan las tres imágenes anime, las imágenes de ejercicios, la nutrición y el progreso.
 
-## Cómo sustituir archivos SIN borrar repositorio
-1. **Conserva** `.github/workflows/static.yml` y el repositorio actual.
-2. En Code > Add file > Upload files, sube **el contenido** de esta carpeta, no su carpeta padre, manteniendo la estructura `assets/`, `exercises/`, `icons/`.
-3. Sobrescribe los archivos existentes si GitHub te permite hacerlo. Si GitHub bloquea la sobrescritura, evita crear copias renombradas y solicita instrucciones para sustituir los archivos de forma segura.
-4. En `exercises/` los 16 nuevos ficheros se añaden a los 16 anteriores; no borres la carpeta antes de subirla.
-5. Comprueba que Actions muestra despliegue verde y que la app indica V4.2.
-6. El `README.md` antiguo es opcional; no interfiere con la aplicación. No subas a GitHub tus fotos personales ni registros exportados.
-
-**Atención:** las fotos se han generado con IA y son referencias de aspecto del ejercicio, no instrucciones biomecánicas validadas. Consulta a un entrenador para aprender técnica y confirmar la máquina concreta en tu gimnasio.
-
-Los datos se guardan en localStorage bajo la misma clave de la versión 4.0; normalmente se conservan si actualizas en la misma URL y navegador. Se recomienda exportar tus datos antes de actualizar.
+No todas las combinaciones tienen ejercicios alternativos suficientes; en ese caso se informa en pantalla. Para no perder entrenamientos, exporta una copia JSON antes de cambios de navegador o dispositivo.
