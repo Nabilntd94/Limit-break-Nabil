@@ -1,12 +1,9 @@
-# LIMIT BREAK 4.3 — Generador de alternativas
+# LIMIT BREAK 4.4 — Primera posición del ejercicio corregida
 
-Versión completa. Se puede subir todo el contenido de esta carpeta a la raíz del repositorio, sin borrar `.github/workflows/static.yml`.
+Esta versión corrige el fallo por el que el primer ejercicio de cada grupo muscular quedaba fijado tras pulsar «Otra propuesta de ejercicios». Ahora se rotan todas las posiciones cuando hay alternativas en la biblioteca.
 
-## Corrección
-- El botón **Otra propuesta de ejercicios** rota las alternativas de cada grupo muscular y muestra cuántas posiciones han cambiado.
-- Conserva los días exactos, el tipo de rutina, el equipamiento y el fútbol del sábado.
-- La vista de sesión permanece abierta al regenerar.
-- Las propuestas se guardan en el almacenamiento local usando la misma clave que en LIMIT BREAK 4.2, para mantener tus registros.
-- Se conservan las tres imágenes anime, las imágenes de ejercicios, la nutrición y el progreso.
+**Conserva `.github/workflows/static.yml` en GitHub.** No borres tus datos de Safari o de la app instalada. Sube los archivos del ZIP a la raíz del repositorio, sustituyendo los que tengan el mismo nombre y ubicación. Si GitHub impide sobrescribir por Upload files, utiliza el editor del archivo o una herramienta de sincronización; no dupliques nombres.
 
-No todas las combinaciones tienen ejercicios alternativos suficientes; en ese caso se informa en pantalla. Para no perder entrenamientos, exporta una copia JSON antes de cambios de navegador o dispositivo.
+El plan sigue respetando días, modalidades y objetivos. Si un músculo solo tiene un ejercicio elegible, no puede inventarse una alternativa. Cambiar la semana sustituye la propuesta no registrada: exporta antes tus datos si necesitas copia.
+
+Se mantienen intactas las tres imágenes de `assets/` y las fotografías de `exercises/`.
