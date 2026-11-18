@@ -1,12 +1,19 @@
-# LIMIT BREAK 4.5 · Fitness Park La Maquinista Edition
+# LIMIT BREAK 4.6 — Bibliotecas ampliadas y generador de variedad real
 
-Aplicación completa para GitHub Pages. Sube **el contenido de esta carpeta** a la raíz del repositorio, no la carpeta contenedora. Conserva `.github/workflows/static.yml` existente.
+## Nuevo
+- 166 ejercicios (63 originales + 103 incorporados). El generador selecciona ejercicios por compatibilidad con equipamiento, penaliza los usados recientemente y evita repetir la selección anterior cuando haya alternativas.
+- 104 alimentos aproximados (31 anteriores + 73 incorporados).
+- 66 platos completos originales, divididos en desayuno, comida, cena y snack. Una nueva propuesta elige una opción de cada categoría con preferencia por platos no usados recientemente.
+- Conserva el sistema de fotos de ejercicios y las ilustraciones anime de `assets/`.
+- Conserva `localStorage` y los registros del dispositivo.
 
-## Novedades
-- Entrenos > Mi Fitness Park: activar únicamente modalidades de equipamiento realmente disponibles en La Maquinista. No se presupone un inventario oficial. Burning Park y Cycle Park no se ofrecen.
-- Entrenos > Ejercicios: favoritos, excluir ejercicios, cambiar su foto subiendo una imagen propia, añadir nuevos ejercicios.
-- Entrenos > Mi semana > Ver rutina > Entrenar en directo: registrar kilos y repeticiones por serie, marcar cada serie, descanso de 90 segundos, energía y notas.
-- Se conservan las ilustraciones anime y las fotos de referencia de versiones previas.
-- Mis datos y ajustes siguen siendo LOCALES en cada navegador. Exportar copia en Perfil antes de actualizar es recomendable. Los archivos de fotos personales y el inventario personalizado no se sincronizan entre dispositivos.
+## GitHub Pages
+1. NO borrar `.github/workflows/static.yml`.
+2. Descargar una copia de tus datos desde Mi perfil antes de actualizar.
+3. Subir el contenido de esta carpeta a la RAÍZ del repositorio. Sustituir los archivos existentes si GitHub permite la sobrescritura.
+4. **NUEVO archivo obligatorio: `catalog46.js`**; debe quedar junto a `index.html`, `app.js`, `library.js` y `upgrade45.js`.
+5. No borrar `assets/`, `exercises/`, `icons/`, ni `upgrade45.js`.
+6. Cuando Actions esté verde, comprobar que la app muestre `V4.6`.
 
-**Aviso:** las fotos de ejercicio son orientativas, no guías técnicas verificadas. Las máquinas varían entre clubes. No uses el repositorio público para guardar tus fotos o copias JSON privadas.
+## Avisos
+Los valores nutricionales son orientativos por 100 g y dependen de preparación, marca y estado crudo/cocido. Las fotos disponibles no cubren aún todos los movimientos nuevos: no se reutilizan fotos equivocadas. Seleccionar ejercicios y menús de manera diferente no garantiza equivalencia de dificultad o ajuste clínico.
